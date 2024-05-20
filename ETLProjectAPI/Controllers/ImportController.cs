@@ -20,13 +20,9 @@ namespace ETLProjectAPI.Controllers
         }
 
         [HttpPost("import")]
-        public async Task<IActionResult> ImportData(string file)
+        public async Task<IActionResult> ImportData()
         {
-            if (file == null || file.Length == 0)
-            {
-                return BadRequest("No file uploaded.");
-            }
-            await _importService.SaveDataFromCSV(file);
+            await _importService.SaveDataFromCSV();
 
             return Ok("Data imported successfully.");
         }

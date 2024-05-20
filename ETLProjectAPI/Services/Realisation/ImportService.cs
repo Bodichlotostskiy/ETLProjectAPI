@@ -17,7 +17,7 @@ namespace ETLProjectAPI.Services.Realisation
         {
             _context = context;
         }
-        public async Task SaveDataFromCSV(string file)
+        public async Task SaveDataFromCSV()
         {
 
             var duplicates = new List<TaxiTrip>();
