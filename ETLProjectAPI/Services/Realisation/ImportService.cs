@@ -47,7 +47,7 @@ namespace ETLProjectAPI.Services.Realisation
                 }
                 using (var connection = _context.CreateConnection())
                 {
-                    await connection.ExecuteAsync(StoredProcedures.InsertTaxiTrip, TaxiTripMapper.MapToDTO(records), commandType: CommandType.StoredProcedure);
+                    await connection.ExecuteAsync(StoredProcedures.InsertTaxiTrip, TaxiTripMapper.MapToDTO(distinctRecords), commandType: CommandType.StoredProcedure);
                 }
             }
         }
